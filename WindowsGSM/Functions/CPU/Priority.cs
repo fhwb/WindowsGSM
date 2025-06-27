@@ -18,13 +18,13 @@ namespace WindowsGSM.Functions.CPU
         {
             switch (priority)
             {
-                case 0: return "Low";
-                case 1: return "Below normal";
+                case 0: return "最低";
+                case 1: return "稍低";
                 default:
-                case 2: return "Normal";
-                case 3: return "Above normal";
-                case 4: return "High";
-                case 5: return "Realtime";
+                case 2: return "正常";
+                case 3: return "稍高";
+                case 4: return "较高";
+                case 5: return "实时";
             }
         }
 
