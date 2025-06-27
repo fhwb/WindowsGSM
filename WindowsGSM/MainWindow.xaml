@@ -19,34 +19,34 @@
         WindowStartupLocation="CenterScreen" Activated="Window_Activated">
     <mah:MetroWindow.RightWindowCommands>
         <mah:WindowCommands>
-            <Button x:Name="button_Website" Content="Website" Click="Button_Website_Click"/>
-            <Button x:Name="button_Discord" Content="Discord" Click="Button_Discord_Click"/>
-            <Button x:Name="button_Patreon" Content="Patreon" Click="Button_Patreon_Click"/>
-            <!--<Button x:Name="button_Settings" Content="Settings" Click="Button_Settings_Click"/>-->
-            <Button x:Name="button_Hide" Content="Hide" Click="Button_Hide_Click"/>
+            <Button x:Name="button_Website" Content="官方网站" Click="Button_Website_Click"/>
+            <Button x:Name="button_Discord" Content="官方Discord" Click="Button_Discord_Click"/>
+            <Button x:Name="button_Patreon" Content="捐赠" Click="Button_Patreon_Click"/>
+            <!--<Button x:Name="button_Settings" Content="设置" Click="Button_Settings_Click"/>-->
+            <Button x:Name="button_Hide" Content="隐藏" Click="Button_Hide_Click"/>
         </mah:WindowCommands>
     </mah:MetroWindow.RightWindowCommands>
 
     <mah:MetroWindow.Flyouts>
         <mah:FlyoutsControl>
-            <mah:Flyout x:Name="MahAppFlyout_ViewPlugins" Header="Plugins" Position="Right" Width="600" Theme="Dark" IsModal="True">
+            <mah:Flyout x:Name="MahAppFlyout_ViewPlugins" Header="插件" Position="Right" Width="600" Theme="Dark" IsModal="True">
                 <DockPanel>
                     <StackPanel DockPanel.Dock="Top" Orientation="Vertical">
                         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                            <Label Content="Installed:" Margin="12,0,0,10" FontSize="14" FontWeight="SemiBold" Padding="5,5.5,0,5"></Label>
+                            <Label Content="已安装:" Margin="12,0,0,10" FontSize="14" FontWeight="SemiBold" Padding="5,5.5,0,5"></Label>
                             <Label x:Name="Label_PluginInstalled" Content=" 0" Margin="0,0,10,10" FontSize="15" FontWeight="SemiBold" Foreground="Aqua"></Label>
-                            <Label Content="Loaded:" Margin="0,0,0,10" FontSize="14" FontWeight="SemiBold" Padding="5,5.5,0,5"></Label>
+                            <Label Content="已加载:" Margin="0,0,0,10" FontSize="14" FontWeight="SemiBold" Padding="5,5.5,0,5"></Label>
                             <Label x:Name="Label_PluginLoaded" Content="0" Margin="0,0,10,10" FontSize="15" FontWeight="SemiBold" Foreground="GreenYellow"></Label>
-                            <Label Content="Failed:" Margin="0,0,0,10" FontSize="14" FontWeight="SemiBold" Padding="5,5.5,0,5"></Label>
+                            <Label Content="失败:" Margin="0,0,0,10" FontSize="14" FontWeight="SemiBold" Padding="5,5.5,0,5"></Label>
                             <Label x:Name="Label_PluginFailed" Content="0" Margin="0,0,10,10" FontSize="15" FontWeight="SemiBold" Foreground="Red"></Label>
                         </StackPanel>
-                        <Button x:Name="Button_ImportPlugin" Content="Import Plugin" Height="29" Width="130" HorizontalAlignment="Right" Click="ImportPlugin_Click" Margin="-20,-50,150,0"></Button>
-                        <Button x:Name="Button_RefreshPlugins" Content="Reload Plugins" Height="29" Width="130" HorizontalAlignment="Right" Margin="-20,-50,12,0" Click="RefreshPlugins_Click"></Button>
+                        <Button x:Name="Button_ImportPlugin" Content="导入插件" Height="29" Width="130" HorizontalAlignment="Right" Click="ImportPlugin_Click" Margin="-20,-50,150,0"></Button>
+                        <Button x:Name="Button_RefreshPlugins" Content="加载插件" Height="29" Width="130" HorizontalAlignment="Right" Margin="-20,-50,12,0" Click="RefreshPlugins_Click"></Button>
                     </StackPanel>
 
                     <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
                         <Label Content="✔️" Margin="10,0,0,10" FontSize="17" FontWeight="SemiBold" Foreground="GreenYellow"></Label>
-                        <Label Content="Loaded Plugin List" Margin="0,0,10,10" FontSize="17" FontWeight="SemiBold"></Label>
+                        <Label Content="已加载插件列表" Margin="0,0,10,10" FontSize="17" FontWeight="SemiBold"></Label>
                     </StackPanel>
 
                     <mah:MetroProgressBar x:Name="ProgressRing_LoadPlugins" IsIndeterminate="True" Foreground="{DynamicResource MahApps.Brushes.AccentBase}" Margin="10,0,10,10" DockPanel.Dock="Top" Visibility="Collapsed"/>
@@ -85,103 +85,103 @@
                     </ScrollViewer>
                 </DockPanel>
             </mah:Flyout>
-            <mah:Flyout x:Name="MahAppFlyout_Settings" Header="WindowsGSM Settings" Position="Right" Width="300" Theme="Dark" IsModal="True">
+            <mah:Flyout x:Name="MahAppFlyout_Settings" Header="WindowsGSM设置" Position="Right" Width="300" Theme="Dark" IsModal="True">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <StackPanel>
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_HardWareAcceleration" Header="Hardware Acceleration" Margin="20,10,0,15" Toggled="HardWareAcceleration_IsCheckedChanged"/>
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_UIAnimation" Header="UI Animation" Margin="20,0,0,15" Toggled="UIAnimation_IsCheckedChanged"/>
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_DarkTheme" Header="Dark Theme" Margin="20,0,0,15" Toggled="DarkTheme_IsCheckedChanged"/>
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_StartOnBoot" Header="Start WindowsGSM on Login" Margin="20,0,0,15" Toggled="StartOnLogin_IsCheckedChanged"/>
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_RestartOnCrash" Header="Auto Restart WindowsGSM on Crash" Margin="20,0,0,15" Toggled="RestartOnCrash_IsCheckedChanged"/>
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_SendStatistics" Header="Send Statistics" Margin="20,0,0,15" Toggled="SendStatistics_IsCheckedChanged"/>
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_DonorConnect" Header="Donor Connect (Patreon)" Margin="20,0,0,15" Toggled="DonorConnect_IsCheckedChanged"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_HardWareAcceleration" Header="硬件加速" Margin="20,10,0,15" Toggled="HardWareAcceleration_IsCheckedChanged"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_UIAnimation" Header="界面动画" Margin="20,0,0,15" Toggled="UIAnimation_IsCheckedChanged"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_DarkTheme" Header="暗色主题" Margin="20,0,0,15" Toggled="DarkTheme_IsCheckedChanged"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_StartOnBoot" Header="开机自启" Margin="20,0,0,15" Toggled="StartOnLogin_IsCheckedChanged"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_RestartOnCrash" Header="崩溃自启" Margin="20,0,0,15" Toggled="RestartOnCrash_IsCheckedChanged"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_SendStatistics" Header="发送统计" Margin="20,0,0,15" Toggled="SendStatistics_IsCheckedChanged"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_DonorConnect" Header="捐赠连接（Patreon）" Margin="20,0,0,15" Toggled="DonorConnect_IsCheckedChanged"/>
                         <DockPanel Margin="20,0,20,20">
-                            <Label Content="WindowsGSM Theme (Donor Only)" FontSize="13.5" Padding="0" DockPanel.Dock="Top"></Label>
+                            <Label Content="捐赠专用主题" FontSize="13.5" Padding="0" DockPanel.Dock="Top"></Label>
                             <ComboBox x:Name="comboBox_Themes" Margin="0,5,0,0" Height="25" DockPanel.Dock="Top" SelectionChanged="ComboBox_Themes_SelectionChanged" IsEnabled="False"></ComboBox>
                         </DockPanel>
                     </StackPanel>
                 </ScrollViewer>
             </mah:Flyout>
-            <mah:Flyout x:Name="MahAppFlyout_DiscordAlert" Header="Discord Alert Settings" Position="Bottom" Theme="Dark">
+            <mah:Flyout x:Name="MahAppFlyout_DiscordAlert" Header="Discord警报设置" Position="Bottom" Theme="Dark">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                     <StackPanel Orientation="Horizontal">
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_AutoStartAlert" Header="Auto Start Alert" Margin="20,20,0,20" Toggled="Switch_AutoStartAlert_Click"/>
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_AutoRestartAlert" Header="Auto Restart Alert" Margin="0,20,0,20" Toggled="Switch_AutoRestartAlert_Click"/>
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_AutoUpdateAlert" Header="Auto Update Alert" Margin="0,20,0,20" Toggled="Switch_AutoUpdateAlert_Click"/>
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_RestartCrontabAlert" Header="Restart Crontab Alert" Margin="0,20,0,20" Toggled="Switch_RestartCrontabAlert_Click"/>
-                        <mah:ToggleSwitch x:Name="MahAppSwitch_CrashAlert" Header="Crash Alert" Margin="20,20,0,20" Toggled="Switch_CrashAlert_Click"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_AutoStartAlert" Header="自动启动警报" Margin="20,20,0,20" Toggled="Switch_AutoStartAlert_Click"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_AutoRestartAlert" Header="自动重启警报" Margin="0,20,0,20" Toggled="Switch_AutoRestartAlert_Click"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_AutoUpdateAlert" Header="自动更新警报" Margin="0,20,0,20" Toggled="Switch_AutoUpdateAlert_Click"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_RestartCrontabAlert" Header="计划重启警报" Margin="0,20,0,20" Toggled="Switch_RestartCrontabAlert_Click"/>
+                        <mah:ToggleSwitch x:Name="MahAppSwitch_CrashAlert" Header="崩溃警报" Margin="20,20,0,20" Toggled="Switch_CrashAlert_Click"/>
                     </StackPanel>
                 </ScrollViewer>
             </mah:Flyout>
-            <mah:Flyout x:Name="MahAppFlyout_RestoreBackup" Header="Restore Backup" Position="Right" Theme="Adapt" IsModal="True">
+            <mah:Flyout x:Name="MahAppFlyout_RestoreBackup" Header="恢复备份" Position="Right" Theme="Adapt" IsModal="True">
                 <Grid Margin="15,0,15,15">
                     <DockPanel DockPanel.Dock="Top" Margin="0,0,0,35">
                         <DockPanel DockPanel.Dock="Top">
-                            <Label DockPanel.Dock="Left" Content="Server:" Padding="5,5,0,5"/>
-                            <Label x:Name="label_RestoreBackupServerName" Content="Server Name"/>
+                            <Label DockPanel.Dock="Left" Content="服务器:" Padding="5,5,0,5"/>
+                            <Label x:Name="label_RestoreBackupServerName" Content="服务器名称"/>
                         </DockPanel>
-                        <Label DockPanel.Dock="Top" Content="Please select a backup"/>
+                        <Label DockPanel.Dock="Top" Content="请选择一个备份"/>
                         <ListBox x:Name="listbox_RestoreBackup" DockPanel.Dock="Top" BorderThickness="1" Width="300"/>
                     </DockPanel>
-                    <Button VerticalAlignment="Bottom" x:Name="button_RestoreBackup" Content="Restore" Click="Button_RestoreBackup_Click"/>
+                    <Button VerticalAlignment="Bottom" x:Name="button_RestoreBackup" Content="恢复" Click="Button_RestoreBackup_Click"/>
                 </Grid>
             </mah:Flyout>
-            <mah:Flyout x:Name="MahAppFlyout_SetAffinity" Header="Set Affinity" Position="Bottom" Theme="Dark">
+            <mah:Flyout x:Name="MahAppFlyout_SetAffinity" Header="分配核心" Position="Bottom" Theme="Dark">
                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                     <StackPanel x:Name="StackPanel_SetAffinity" Orientation="Horizontal" VerticalAlignment="Center" Margin="20"/>
                 </ScrollViewer>
             </mah:Flyout>
-            <mah:Flyout x:Name="MahAppFlyout_EditConfig" Header="Edit WindowsGSM.cfg" Position="Right" Theme="Adapt" IsModal="True">
+            <mah:Flyout x:Name="MahAppFlyout_EditConfig" Header="设置服务器参数" Position="Right" Theme="Adapt" IsModal="True">
                 <Grid Margin="15,0,15,15">
                     <DockPanel Margin="0,0,0,35">
                         <StackPanel DockPanel.Dock="Top">
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                                 <StackPanel>
-                                    <Label Content="Server ID"></Label>
+                                    <Label Content="服务器编号"></Label>
                                     <TextBox x:Name="textbox_EC_ServerID" Height="23" Width="120" TextWrapping="Wrap" Text="" FontFamily="Consolas" VerticalAlignment="Top" IsReadOnly="True"/>
                                 </StackPanel>
                                 <StackPanel Margin="5,0,0,0">
-                                    <Label Content="Server Game"></Label>
+                                    <Label Content="游戏服务端"></Label>
                                     <TextBox x:Name="textbox_EC_ServerGame" Height="23" Width="375" TextWrapping="Wrap" Text="" FontFamily="Consolas" VerticalAlignment="Top" IsReadOnly="True"/>
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Margin="0,0,0,10">
-                                <Label Content="Server Name"></Label>
+                                <Label Content="服务器名称"></Label>
                                 <TextBox x:Name="textbox_EC_ServerName" Height="23" Width="500" TextWrapping="Wrap" Text="" FontFamily="Consolas" VerticalAlignment="Top"/>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                                 <StackPanel>
-                                    <Label Content="Server IP Address"></Label>
+                                    <Label Content="服务器IP地址"></Label>
                                     <TextBox x:Name="textbox_EC_ServerIP" Height="23" Width="120" TextWrapping="Wrap" Text="" FontFamily="Consolas" VerticalAlignment="Top"/>
                                 </StackPanel>
                                 <StackPanel Margin="5,0,0,0">
-                                    <Label Content="Server Port"></Label>
+                                    <Label Content="运行端口"></Label>
                                     <mah:NumericUpDown x:Name="numericUpDown_EC_ServerPort" Minimum="1" Maximum="65535" FontFamily="Consolas" Interval="1" Height="5" Width="120"/>
                                 </StackPanel>
                                 <StackPanel Margin="5,0,0,0">
-                                    <Label Content="Server Query Port"></Label>
+                                    <Label Content="查询端口"></Label>
                                     <mah:NumericUpDown x:Name="numericUpDown_EC_ServerQueryPort" Minimum="1" Maximum="65535" FontFamily="Consolas" Interval="1" Height="5" Width="120"/>
                                 </StackPanel>
                                 <StackPanel Margin="5,0,0,0">
-                                    <Label Content="Server Maxplayer"></Label>
+                                    <Label Content="最大人数"></Label>
                                     <mah:NumericUpDown x:Name="numericUpDown_EC_ServerMaxplayer" Minimum="1" Maximum="100000" FontFamily="Consolas" Interval="1" Height="5" Width="120"/>
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Margin="0,0,0,10">
-                                <Label Content="Server Start Map"></Label>
+                                <Label Content="服务器启动地图"></Label>
                                 <TextBox x:Name="textbox_EC_ServerMap" Height="23" Width="500" FontFamily="Consolas" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                             </StackPanel>
                             <StackPanel Margin="0,0,0,10">
-                                <Label Content="Server GSLT"></Label>
+                                <Label Content="服务器GSLT"></Label>
                                 <TextBox x:Name="textbox_EC_ServerGSLT" Height="23" Width="500" FontFamily="Consolas" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                             </StackPanel>
                             <StackPanel>
-                                <Label Content="Server Start Param"></Label>
+                                <Label Content="服务器启动参数"></Label>
                             </StackPanel>
                         </StackPanel>
                         <TextBox x:Name="textbox_EC_ServerParam" Width="500" TextWrapping="Wrap" FontFamily="Consolas" Text="" DockPanel.Dock="Top"/>
                     </DockPanel>
-                    <Button x:Name="button_EC_SaveConfig" VerticalAlignment="Bottom" Content="Save" Width="500" Height="25" Click="Button_EditConfig_Save_Click"/>
+                    <Button x:Name="button_EC_SaveConfig" VerticalAlignment="Bottom" Content="保存" Width="500" Height="30" Click="Button_EditConfig_Save_Click"/>
                 </Grid>
             </mah:Flyout>
             <mah:Flyout x:Name="MahAppFlyout_ManageAddons" Header="Manage Addons" Position="Right" Theme="Adapt" IsModal="True">
@@ -212,11 +212,11 @@
                     </DockPanel>
                 </DockPanel>
             </mah:Flyout>
-            <mah:Flyout x:Name="MahAppFlyout_InstallGameServer" Header="Install Game Server" Width="500" Position="Left" Theme="Adapt" IsModal="True">
+            <mah:Flyout x:Name="MahAppFlyout_InstallGameServer" Header="安装游戏服务器" Width="500" Position="Left" Theme="Adapt" IsModal="True">
                 <DockPanel VerticalAlignment="Stretch" Height="Auto">
                     <DockPanel Margin="20,0,20,0">
                         <DockPanel DockPanel.Dock="Top">
-                            <Label Content="Game Server"></Label>
+                            <Label Content="游戏服务器"></Label>
                             <Label x:Name="label_GameServerCount" Content="" HorizontalAlignment="Right"></Label>
                         </DockPanel>
                         <DockPanel Margin="0,0,0,15" DockPanel.Dock="Top" MinWidth="350">
@@ -232,17 +232,17 @@
                             </ComboBox>
                         </DockPanel>
 
-                        <Label Content="Server Name" DockPanel.Dock="Top"></Label>
+                        <Label Content="服务器名称" DockPanel.Dock="Top"></Label>
                         <DockPanel Margin="0,0,0,15" DockPanel.Dock="Top">
                             <TextBox x:Name="textbox_InstallServerName" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                         </DockPanel>
 
                         <DockPanel Margin="0,0,0,15" DockPanel.Dock="Top">
-                            <Button x:Name="button_InstallSetAccount" Content="Set Account" DockPanel.Dock="Left" Width="120" Margin="0,0,5,0" Click="Button_SetAccount_Click"/>
-                            <Button x:Name="button_Install" Content="Install" VerticalAlignment="Top" Click="Button_Install_Click"/>
+                            <Button x:Name="button_InstallSetAccount" Content="设置账户" DockPanel.Dock="Left" Width="120" Margin="0,0,5,0" Click="Button_SetAccount_Click"/>
+                            <Button x:Name="button_Install" Content="安装" VerticalAlignment="Top" Click="Button_Install_Click"/>
                         </DockPanel>
 
-                        <Label Content="Progress" DockPanel.Dock="Top"></Label>
+                        <Label Content="进展" DockPanel.Dock="Top"></Label>
                         <DockPanel Margin="0,0,0,15" DockPanel.Dock="Top">
                             <Grid Height="23" VerticalAlignment="Top">
                                 <ProgressBar x:Name="progressbar_InstallProgress" Value="0"/>
@@ -251,7 +251,7 @@
                         </DockPanel>
 
                         <DockPanel Margin="0,0,0,5" DockPanel.Dock="Top">
-                            <Label Content="Install Log" DockPanel.Dock="Left"></Label>
+                            <Label Content="安装日志" DockPanel.Dock="Left"></Label>
                             <DockPanel HorizontalAlignment="Right">
                                 <TextBox x:Name="textBox_InstallToken" Height="23" TextWrapping="Wrap" DockPanel.Dock="Left" MaxLines="1" Margin="5,0,5,0" Width="100"/>
                                 <Button x:Name="button_InstallSendToken" Content="Send Token" DockPanel.Dock="Right" Width="100" Click="Button_SendToken_Click"/>
@@ -261,12 +261,12 @@
                     </DockPanel>
                 </DockPanel>
             </mah:Flyout>
-            <mah:Flyout x:Name="MahAppFlyout_ImportGameServer" Header="Import Game Server" Width="500" Position="Left" Theme="Adapt" IsModal="True">
+            <mah:Flyout x:Name="MahAppFlyout_ImportGameServer" Header="导入游戏服务器" Width="500" Position="Left" Theme="Adapt" IsModal="True">
                 <DockPanel VerticalAlignment="Stretch" Height="Auto">
                     <DockPanel Margin="20,0,20,0">
 
                         <DockPanel DockPanel.Dock="Top">
-                            <Label Content="Game Server"></Label>
+                            <Label Content="游戏服务器"></Label>
                         </DockPanel>
                         <DockPanel Margin="0,0,0,15" DockPanel.Dock="Top" MinWidth="350">
                             <ComboBox x:Name="comboBox_ImportGameServer" VerticalAlignment="Top">
@@ -282,23 +282,23 @@
                             </ComboBox>
                         </DockPanel>
 
-                        <Label Content="Server Name" DockPanel.Dock="Top"></Label>
+                        <Label Content="服务器名称" DockPanel.Dock="Top"></Label>
                         <DockPanel Margin="0,0,0,15" DockPanel.Dock="Top">
                             <TextBox x:Name="textbox_ImportServerName" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                         </DockPanel>
 
-                        <Label Content="Old Server Directory:" DockPanel.Dock="Top"/>
+                        <Label Content="原服务器目录:" DockPanel.Dock="Top"/>
                         <DockPanel Margin="0,0,0,0" DockPanel.Dock="Top">
                             <TextBox x:Name="textbox_ServerDir" Height="23" TextWrapping="Wrap" Text="" DockPanel.Dock="Left" Width="280"/>
-                            <Button x:Name="button_Browse" Content="Browse" Height="26" Width="70" Click="Button_Browse_Click"/>
+                            <Button x:Name="button_Browse" Content="浏览" Height="26" Width="70" Click="Button_Browse_Click"/>
                         </DockPanel>
                         <Label x:Name="label_ServerDirWarn" Content="" DockPanel.Dock="Top"/>
 
                         <DockPanel Margin="0,15,0,15" DockPanel.Dock="Top">
-                            <Button x:Name="button_Import" Content="Import" VerticalAlignment="Top" Click="Button_Import_Click"/>
+                            <Button x:Name="button_Import" Content="导入" VerticalAlignment="Top" Click="Button_Import_Click"/>
                         </DockPanel>
 
-                        <Label Content="Progress" DockPanel.Dock="Top"></Label>
+                        <Label Content="进展" DockPanel.Dock="Top"></Label>
                         <DockPanel Margin="0,0,0,15" DockPanel.Dock="Top">
                             <Grid Height="23" VerticalAlignment="Top">
                                 <ProgressBar x:Name="progressbar_ImportProgress" Value="0"/>
@@ -320,30 +320,30 @@
                         <DockPanel DockPanel.Dock="Left">
                             <DockPanel DockPanel.Dock="Top">
                                 <DockPanel DockPanel.Dock="Top">
-                                    <Label DockPanel.Dock="Top" Content="DISCORD BOT" FontWeight="SemiBold" Foreground="Gray"/>
+                                    <Label DockPanel.Dock="Top" Content="DISCORD机器人" FontWeight="SemiBold" Foreground="Gray"/>
                                 </DockPanel>
                                 <DockPanel DockPanel.Dock="Top">
-                                    <Label Content="Usage: Remote control the game servers with Discord" DockPanel.Dock="Left"/>
-                                    <Button x:Name="button_DiscordBotInvite" DockPanel.Dock="Right" HorizontalAlignment="Right" Content="Invite" Width="75" Height="23" Click="Button_DiscordBotInvite_Click" IsEnabled="False"/>
+                                    <Label Content="用法: 使用Discord远程控制游戏服务器" DockPanel.Dock="Left"/>
+                                    <Button x:Name="button_DiscordBotInvite" DockPanel.Dock="Right" HorizontalAlignment="Right" Content="邀请" Width="75" Height="23" Click="Button_DiscordBotInvite_Click" IsEnabled="False"/>
                                 </DockPanel>
-                                <Label Content="Available commands:" DockPanel.Dock="Top"/>
+                                <Label Content="可用指令:" DockPanel.Dock="Top"/>
                                 <Label x:Name="label_DiscordBotCommands" Content="" FontFamily="Consolas" DockPanel.Dock="Top"/>
                             </DockPanel>
                             <DockPanel DockPanel.Dock="Top" Margin="5,10,0,0">
-                                <mah:ToggleSwitch DockPanel.Dock="Left" VerticalAlignment="Center" x:Name="switch_DiscordBot" Header="Enable" Style="{StaticResource MahApps.Styles.ToggleSwitch}" Width="140" Toggled="Switch_DiscordBot_Toggled"/>
-                                <mah:ToggleSwitch DockPanel.Dock="Left" VerticalAlignment="Center" x:Name="MahAppSwitch_DiscordBotAutoStart" Header="Auto Start" Style="{StaticResource MahApps.Styles.ToggleSwitch}" Width="140" Toggled="Switch_DiscordBotAutoStart_Click"/>
+                                <mah:ToggleSwitch DockPanel.Dock="Left" VerticalAlignment="Center" x:Name="switch_DiscordBot" Header="开启" Style="{StaticResource MahApps.Styles.ToggleSwitch}" Width="140" Toggled="Switch_DiscordBot_Toggled"/>
+                                <mah:ToggleSwitch DockPanel.Dock="Left" VerticalAlignment="Center" x:Name="MahAppSwitch_DiscordBotAutoStart" Header="自动启动" Style="{StaticResource MahApps.Styles.ToggleSwitch}" Width="140" Toggled="Switch_DiscordBotAutoStart_Click"/>
                                 <DockPanel DockPanel.Dock="Top" Margin="10,0,0,0">
                                     <DockPanel DockPanel.Dock="Top">
-                                        <Label DockPanel.Dock="Left" Content="Bot Prefix"/>
-                                        <Button DockPanel.Dock="Right" x:Name="button_DiscordBotPrefixEdit" Content="Edit" Margin="0,0,0,5" HorizontalAlignment="Right" Width="75" Height="23" Click="Button_DiscordBotPrefixEdit_Click"/>
+                                        <Label DockPanel.Dock="Left" Content="机器人前缀"/>
+                                        <Button DockPanel.Dock="Right" x:Name="button_DiscordBotPrefixEdit" Content="编辑" Margin="0,0,0,5" HorizontalAlignment="Right" Width="75" Height="23" Click="Button_DiscordBotPrefixEdit_Click"/>
                                     </DockPanel>
                                     <TextBox x:Name="textBox_DiscordBotPrefix" Height="11" DockPanel.Dock="Top" Text="" Margin="0,0,0,0" Width="170" IsEnabled="False" FontFamily="Consolas"/>
                                 </DockPanel>
                             </DockPanel>
 
                             <DockPanel DockPanel.Dock="Top" Margin="0,10,0,0">
-                                <Label Content="Discord Bot Token"/>
-                                <Button x:Name="button_DiscordBotTokenEdit" Content="Edit" Margin="0,0,0,5" HorizontalAlignment="Right" Width="75" Height="23" Click="Button_DiscordBotTokenEdit_Click"/>
+                                <Label Content="Discord机器人令牌"/>
+                                <Button x:Name="button_DiscordBotTokenEdit" Content="编辑" Margin="0,0,0,5" HorizontalAlignment="Right" Width="75" Height="23" Click="Button_DiscordBotTokenEdit_Click"/>
                             </DockPanel>
                             <Grid DockPanel.Dock="Top">
                                 <TextBox x:Name="textBox_DiscordBotToken" Height="11" Text="" IsEnabled="False" FontFamily="Consolas"/>
@@ -365,23 +365,23 @@
                             </DockPanel>-->
 
                             <DockPanel DockPanel.Dock="Top" Margin="0,10,0,0">
-                                <Label Content="Discord Bot Log"/>
+                                <Label Content="Discord机器人日志"/>
                             </DockPanel>
                             <TextBox x:Name="textBox_DiscordBotLog" FontFamily="Consolas" MaxWidth="465" DockPanel.Dock="Top" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" IsReadOnly="True" TextWrapping="NoWrap"/>
                         </DockPanel>
                         <DockPanel DockPanel.Dock="Right" Margin="20,0,0,0">
                             <DockPanel DockPanel.Dock="Top">
-                                <Label Content="Admin List"/>
+                                <Label Content="管理员列表"/>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                    <Button x:Name="button_DiscordBotAddID" Content="Add Admin ID" Margin="0,0,5,5" HorizontalAlignment="Right" Width="97" Height="23" Click="Button_DiscordBotAddID_Click"/>
-                                    <Button x:Name="button_DiscordBotEditServerID" Content="Edit Server ID" Margin="0,0,5,5" HorizontalAlignment="Right" Width="97" Height="23" Click="Button_DiscordBotEditServerID_Click"/>
-                                    <Button x:Name="button_DiscordBotRemoveID" Content="Remove" Margin="0,0,0,5" HorizontalAlignment="Right" Width="70" Height="23" Click="Button_DiscordBotRemoveID_Click"/>
+                                    <Button x:Name="button_DiscordBotAddID" Content="添加管理员ID" Margin="0,0,5,5" HorizontalAlignment="Right" Width="97" Height="25" Click="Button_DiscordBotAddID_Click"/>
+                                    <Button x:Name="button_DiscordBotEditServerID" Content="编辑服务器ID" Margin="0,0,5,5" HorizontalAlignment="Right" Width="97" Height="25" Click="Button_DiscordBotEditServerID_Click"/>
+                                    <Button x:Name="button_DiscordBotRemoveID" Content="移除" Margin="0,0,0,5" HorizontalAlignment="Right" Width="70" Height="25" Click="Button_DiscordBotRemoveID_Click"/>
                                 </StackPanel>
                             </DockPanel>
                             <DataGrid x:Name="listBox_DiscordBotAdminList" SelectionMode="Single" BorderThickness="1" DockPanel.Dock="Top">
                                 <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Admin ID" IsReadOnly="True" Binding="{Binding Path=AdminId}" Width="150" MinWidth="150" MaxWidth="150" FontFamily="Consolas"/>
-                                    <DataGridTextColumn Header="Server IDs" IsReadOnly="True" Binding="{Binding Path=ServerIds}" Width="1*" FontFamily="Consolas"/>
+                                    <DataGridTextColumn Header="管理员ID" IsReadOnly="True" Binding="{Binding Path=AdminId}" Width="150" MinWidth="150" MaxWidth="150" FontFamily="Consolas"/>
+                                    <DataGridTextColumn Header="服务器编号" IsReadOnly="True" Binding="{Binding Path=ServerIds}" Width="1*" FontFamily="Consolas"/>
                                 </DataGrid.Columns>
                             </DataGrid>
                         </DockPanel>
@@ -393,7 +393,7 @@
         <DockPanel Name="hMenu_Dashboard" Margin="48,0,0,0" Visibility="Hidden">
             <Grid Margin="10,10,10,10">
                 <DockPanel>
-                    <Label DockPanel.Dock="Top" Content="SYSTEM METRICS" FontWeight="SemiBold" Foreground="Gray"/>
+                    <Label DockPanel.Dock="Top" Content="系统监视器" FontWeight="SemiBold" Foreground="Gray"/>
                     <DockPanel DockPanel.Dock="Top">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -408,7 +408,7 @@
                                 <Grid DockPanel.Dock="Left" Background="RoyalBlue" Height="Auto" Width="5"/>
                                 <DockPanel Margin="15">
                                     <DockPanel DockPanel.Dock="Top" Margin="0,0,0,10">
-                                        <Label DockPanel.Dock="Left" Content="CPU" FontSize="25" Padding="0"/>
+                                        <Label DockPanel.Dock="Left" Content="处理器" FontSize="25" Padding="0"/>
                                         <Label DockPanel.Dock="Right" Content="" VerticalAlignment="Bottom" HorizontalAlignment="Right" x:Name="dashboard_cpu_type"/>
                                     </DockPanel>
                                     <DockPanel DockPanel.Dock="Top">
@@ -422,7 +422,7 @@
                                 <Grid DockPanel.Dock="Left" Background="Purple" Height="Auto" Width="5"/>
                                 <DockPanel Margin="15">
                                     <DockPanel DockPanel.Dock="Top" Margin="0,0,0,10">
-                                        <Label DockPanel.Dock="Left" Content="Memory" FontSize="25" Padding="0"/>
+                                        <Label DockPanel.Dock="Left" Content="内存" FontSize="25" Padding="0"/>
                                         <Label DockPanel.Dock="Right" Content="" VerticalAlignment="Bottom" HorizontalAlignment="Right" x:Name="dashboard_ram_type"/>
                                     </DockPanel>
                                     <DockPanel DockPanel.Dock="Top">
@@ -436,7 +436,7 @@
                                 <Grid DockPanel.Dock="Left" Background="ForestGreen" Height="Auto" Width="5"/>
                                 <DockPanel Margin="15">
                                     <DockPanel DockPanel.Dock="Top" Margin="0,0,0,10">
-                                        <Label DockPanel.Dock="Left" Content="Disk" FontSize="25" Padding="0"/>
+                                        <Label DockPanel.Dock="Left" Content="硬盘" FontSize="25" Padding="0"/>
                                         <Label DockPanel.Dock="Left" Content="" FontSize="25" Padding="5,0,0,0" x:Name="dashboard_disk_name"/>
                                         <Label DockPanel.Dock="Right" Content="" VerticalAlignment="Bottom" HorizontalAlignment="Right" x:Name="dashboard_disk_type"/>
                                     </DockPanel>
@@ -450,7 +450,7 @@
                         </Grid>
                     </DockPanel>
 
-                    <Label DockPanel.Dock="Top" Content="GAME SERVERS" FontWeight="SemiBold" Foreground="Gray" Margin="0,10,0,0"/>
+                    <Label DockPanel.Dock="Top" Content="游戏服务器" FontWeight="SemiBold" Foreground="Gray" Margin="0,10,0,0"/>
                     <DockPanel DockPanel.Dock="Top" x:Name="dashboard_gameservers">
                         <Grid>
                             <Grid.ColumnDefinitions>
@@ -465,8 +465,8 @@
                                 <Grid DockPanel.Dock="Left" Background="MediumVioletRed" Height="Auto" Width="5"/>
                                 <DockPanel Margin="15">
                                     <DockPanel DockPanel.Dock="Top" Margin="0,0,0,10">
-                                        <Label DockPanel.Dock="Left" Content="Servers" FontSize="25" Padding="0"/>
-                                        <Label DockPanel.Dock="Right" Content="Installed server count" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                                        <Label DockPanel.Dock="Left" Content="服务器" FontSize="25" Padding="0"/>
+                                        <Label DockPanel.Dock="Right" Content="已安装服务器" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                                     </DockPanel>
                                     <DockPanel DockPanel.Dock="Top">
                                         <Label DockPanel.Dock="Left" Content="0%" Padding="0" x:Name="dashboard_servers_usage"/>
@@ -479,8 +479,8 @@
                                 <Grid DockPanel.Dock="Left" Background="SpringGreen" Height="Auto" Width="5"/>
                                 <DockPanel Margin="15">
                                     <DockPanel DockPanel.Dock="Top" Margin="0,0,0,10">
-                                        <Label DockPanel.Dock="Left" Content="Online" FontSize="25" Padding="0"/>
-                                        <Label DockPanel.Dock="Right" Content="Started server count" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+                                        <Label DockPanel.Dock="Left" Content="在线" FontSize="25" Padding="0"/>
+                                        <Label DockPanel.Dock="Right" Content="已启动服务器" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
                                     </DockPanel>
                                     <DockPanel DockPanel.Dock="Top">
                                         <Label DockPanel.Dock="Left" Content="0%" Padding="0" x:Name="dashboard_started_usage"/>
@@ -493,7 +493,7 @@
                                 <Grid DockPanel.Dock="Left" Background="Goldenrod" Height="Auto" Width="5"/>
                                 <DockPanel Margin="15">
                                     <DockPanel DockPanel.Dock="Top">
-                                        <Label DockPanel.Dock="Left" Content="Active Players" FontSize="25" VerticalAlignment="Center"/>
+                                        <Label DockPanel.Dock="Left" Content="在线玩家" FontSize="25" VerticalAlignment="Center"/>
                                         <Label DockPanel.Dock="Right" Content="0" FontSize="25" HorizontalAlignment="Right" VerticalAlignment="Center" x:Name="dashboard_players_count"/>
                                     </DockPanel>
                                 </DockPanel>
@@ -518,102 +518,102 @@
         <DockPanel Name="hMenu_Home" Margin="48,0,0,0" Visibility="Hidden">
             <Grid DockPanel.Dock="Top">
                 <Menu x:Name="menu" Height="30" DockPanel.Dock="Top" Margin="1,0,0,0">
-                    <MenuItem Header="Servers" Height="30">
-                        <MenuItem Header="Install GameServer" Click="Install_Click">
+                    <MenuItem Header="服务器" Height="30">
+                        <MenuItem Header="安装游戏服务器" Click="Install_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Install.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Import GameServer" Click="Import_Click"/>
+                        <MenuItem Header="导入游戏服务器" Click="Import_Click"/>
                         <Separator/>
-                        <MenuItem Header="Delete GameServer" Click="Delete_Click">
+                        <MenuItem Header="删除游戏服务器" Click="Delete_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Delete.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
-                    <MenuItem Header="Actions" Height="30">
-                        <MenuItem Header="Start" Click="Actions_Start_Click">
+                    <MenuItem Header="控制" Height="30">
+                        <MenuItem Header="启动" Click="Actions_Start_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Start.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Stop" Click="Actions_Stop_Click">
+                        <MenuItem Header="停止" Click="Actions_Stop_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Stop.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Restart" Click="Actions_Restart_Click">
+                        <MenuItem Header="重启" Click="Actions_Restart_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Restart.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="More...">
-                            <MenuItem Header="Start All Servers" Click="Actions_StartAllServers_Click">
+                        <MenuItem Header="更多...">
+                            <MenuItem Header="启动所有服务器" Click="Actions_StartAllServers_Click">
                                 <MenuItem.Icon>
                                     <Image Source="/WindowsGSM;component/Images/Start.ico" Width="23" Margin="3"/>
                                 </MenuItem.Icon>
                             </MenuItem>
-                            <MenuItem Header="Start Servers with Auto Start Enabled" Click="Actions_StartServersWithAutoStartEnabled_Click">
+                            <MenuItem Header="启用自动启动后启动服务器" Click="Actions_StartServersWithAutoStartEnabled_Click">
                                 <MenuItem.Icon>
                                     <Image Source="/WindowsGSM;component/Images/Start.ico" Width="23" Margin="3"/>
                                 </MenuItem.Icon>
                             </MenuItem>
-                            <MenuItem Header="Stop All Servers" Click="Actions_StopAllServers_Click">
+                            <MenuItem Header="停止所有服务器" Click="Actions_StopAllServers_Click">
                                 <MenuItem.Icon>
                                     <Image Source="/WindowsGSM;component/Images/Stop.ico" Width="23" Margin="3"/>
                                 </MenuItem.Icon>
                             </MenuItem>
-                            <MenuItem Header="Restart All Servers" Click="Actions_RestartAllServers_Click">
+                            <MenuItem Header="重启所有服务器" Click="Actions_RestartAllServers_Click">
                                 <MenuItem.Icon>
                                     <Image Source="/WindowsGSM;component/Images/Restart.ico" Width="23" Margin="3"/>
                                 </MenuItem.Icon>
                             </MenuItem>
                         </MenuItem>
                         <Separator/>
-                        <MenuItem Header="Toggle Console" Click="Actions_ToggleConsole_Click"/>
+                        <MenuItem Header="切换控制台" Click="Actions_ToggleConsole_Click"/>
                         <Separator/>
-                        <MenuItem Header="Update">
+                        <MenuItem Header="更新">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Update.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
-                            <MenuItem Header="Update" Height="30" Click="Actions_Update_Click"/>
-                            <MenuItem Header="Update Validate" Height="30" Click="Actions_UpdateValidate_Click"/>
+                            <MenuItem Header="更新" Height="30" Click="Actions_Update_Click"/>
+                            <MenuItem Header="更新验证" Height="30" Click="Actions_UpdateValidate_Click"/>
                         </MenuItem>
                         <Separator/>
-                        <MenuItem Header="Backup" Click="Actions_Backup_Click">
+                        <MenuItem Header="创建备份" Click="Actions_Backup_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Backup.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Restore Backup" Click="Actions_RestoreBackup_Click">
+                        <MenuItem Header="恢复备份" Click="Actions_RestoreBackup_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Restore.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
-                    <MenuItem Header="Browse" Height="30">
-                        <MenuItem Header="Server Backups">
+                    <MenuItem Header="查看" Height="30">
+                        <MenuItem Header="服务器备份">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Zip.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
-                            <MenuItem Header="Backup Files" Click="Browse_ServerBackups_Click"/>
-                            <MenuItem Header="Backup Configs" Click="Browse_BackupFiles_Click"/>
+                            <MenuItem Header="文件备份" Click="Browse_ServerBackups_Click"/>
+                            <MenuItem Header="配置备份" Click="Browse_BackupFiles_Click"/>
                         </MenuItem>
-                        <MenuItem Header="Server Files" Click="Browse_ServerFiles_Click">
+                        <MenuItem Header="服务器文件" Click="Browse_ServerFiles_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Files.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Server Configs" Click="Browse_ServerConfigs_Click">
+                        <MenuItem Header="服务器配置" Click="Browse_ServerConfigs_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Config.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
                     </MenuItem>
-                    <MenuItem Header="Tools" Height="30">
-                        <MenuItem Header="Global Server List Check" Click="Tools_GlobalServerListCheck_Click"/>
-                        <MenuItem Header="Install Addons">
+                    <MenuItem Header="工具" Height="30">
+                        <MenuItem Header="全球服务器列表检查" Click="Tools_GlobalServerListCheck_Click"/>
+                        <MenuItem Header="安装附加组件">
                             <MenuItem Header="AMX Mod X + MetaMod-P" Click="Tool_InstallAMXModXMetamodP_Click">
                                 <MenuItem.Icon>
                                     <Image Source="/WindowsGSM;component/Images/Tools/AMXModX.ico" Width="23" Margin="3"/>
@@ -636,24 +636,24 @@
                             </MenuItem>
                         </MenuItem>
                     </MenuItem>
-                    <MenuItem Header="Help" Height="30">
-                        <MenuItem Header="Online Documentation" Click="Help_OnlineDocumentation_Click">
+                    <MenuItem Header="帮助" Height="30">
+                        <MenuItem Header="在线文档" Click="Help_OnlineDocumentation_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Book.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Report an issue" Click="Help_ReportIssue_Click">
+                        <MenuItem Header="报告问题" Click="Help_ReportIssue_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Issue.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
-                        <MenuItem Header="Software Updates" Click="Help_SoftwareUpdates_Click">
+                        <MenuItem Header="检查更新" Click="Help_SoftwareUpdates_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/Update.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
                         </MenuItem>
                         <Separator/>
-                        <MenuItem Header="About WindowsGSM" Click="Help_AboutWindowsGSM_Click">
+                        <MenuItem Header="关于WindowsGSM" Click="Help_AboutWindowsGSM_Click">
                             <MenuItem.Icon>
                                 <Image Source="/WindowsGSM;component/Images/WindowsGSM-Icon.ico" Width="23" Margin="3"/>
                             </MenuItem.Icon>
@@ -663,17 +663,17 @@
             </Grid>
             <Grid Height="1" Background="Black" DockPanel.Dock="Top"/>
             <Grid Height="40" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="0,0,0,0">
-                <Label x:Name="label_select" Content="Select or Install or Import a server" HorizontalAlignment="Left" Margin="11,4,0,2" VerticalAlignment="Center" Height="34"/>
+                <Label x:Name="label_select" Content="选择安装或导入一个服务器" HorizontalAlignment="Left" Margin="11,4,0,2" VerticalAlignment="Center" Height="34"/>
                 <DockPanel x:Name="grid_action">
                     <!--<Button x:Name="button_Crash" Cursor="Hand" Content="CRASH" HorizontalAlignment="Left" Margin="10,5,0,5" Width="112" Height="26" Background="Purple" Foreground="White" Click="Actions_Crash_Click"/>-->
-                    <Button x:Name="button_Start" Cursor="Hand" Content="START" HorizontalAlignment="Left" Margin="10,5,0,5" Width="112" Height="26" Click="Actions_Start_Click" Background="LimeGreen" Foreground="White"/>
-                    <Button x:Name="button_Stop" Cursor="Hand" Content="STOP" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_Stop_Click" Background="Orange" Foreground="White"/>
-                    <Button x:Name="button_Restart" Cursor="Hand" Content="RESTART" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_Restart_Click" Background="DeepSkyBlue" Foreground="White"/>
-                    <Button x:Name="button_Kill" Cursor="Hand" Content="KILL" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_Kill_Click" Background="OrangeRed" Foreground="White"/>
-                    <Button x:Name="button_Console" Cursor="Hand" Content="TOGGLE CONSOLE" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_ToggleConsole_Click"/>
-                    <Button x:Name="button_Update" Cursor="Hand" Content="UPDATE" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_Update_Click"/>
-                    <Button x:Name="button_Backup" Cursor="Hand" Content="BACKUP" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_Backup_Click"/>
-                    <Button x:Name="button_ManageAddons" Cursor="Hand" Content="MANAGE ADDONS" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_ManageAddons_Click"/>
+                    <Button x:Name="button_Start" Cursor="Hand" Content="启动" HorizontalAlignment="Left" Margin="10,5,0,5" Width="112" Height="26" Click="Actions_Start_Click" Background="LimeGreen" Foreground="White"/>
+                    <Button x:Name="button_Stop" Cursor="Hand" Content="停止" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_Stop_Click" Background="Orange" Foreground="White"/>
+                    <Button x:Name="button_Restart" Cursor="Hand" Content="重启" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_Restart_Click" Background="DeepSkyBlue" Foreground="White"/>
+                    <Button x:Name="button_Kill" Cursor="Hand" Content="杀死" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_Kill_Click" Background="OrangeRed" Foreground="White"/>
+                    <Button x:Name="button_Console" Cursor="Hand" Content="切换控制台" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_ToggleConsole_Click"/>
+                    <Button x:Name="button_Update" Cursor="Hand" Content="更新" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_Update_Click"/>
+                    <Button x:Name="button_Backup" Cursor="Hand" Content="备份" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_Backup_Click"/>
+                    <Button x:Name="button_ManageAddons" Cursor="Hand" Content="附加组件" HorizontalAlignment="Left" Margin="5,5,0,5" Width="112" Height="26" Click="Actions_ManageAddons_Click"/>
                 </DockPanel>
             </Grid>
             <Grid Height="1" Background="Black" DockPanel.Dock="Top"/>
@@ -695,24 +695,24 @@
                           IsSynchronizedWithCurrentItem="True"
                           HorizontalScrollBarVisibility="Disabled">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID" IsReadOnly="True" Binding="{Binding Path=ID}" Width="35" MinWidth="35" MaxWidth="35"/>
-                        <DataGridTextColumn Header="PID" IsReadOnly="True" Binding="{Binding Path=PID}" Width="65" MinWidth="55" MaxWidth="95"/>
-                        <DataGridTemplateColumn Header="MOD" IsReadOnly="True" Width="53" MinWidth="53" MaxWidth="53">
+                        <DataGridTextColumn Header="编号" IsReadOnly="True" Binding="{Binding Path=ID}" Width="45" MinWidth="45" MaxWidth="55"/>
+                        <DataGridTextColumn Header="进程ID" IsReadOnly="True" Binding="{Binding Path=PID}" Width="65" MinWidth="55" MaxWidth="95"/>
+                        <DataGridTemplateColumn Header="游戏" IsReadOnly="True" Width="53" MinWidth="53" MaxWidth="53">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Image Source="{Binding Icon}" Width="18"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Header="Status" IsReadOnly="True" Binding="{Binding Path=Status}" Width="80" MinWidth="80" MaxWidth="80"/>
-                        <DataGridTextColumn Header="Server Name" IsReadOnly="True" Binding="{Binding Path=Name}" Width="10*" MinWidth="105"/>
-                        <DataGridTextColumn Header="IP Address" IsReadOnly="True" Binding="{Binding Path=IP}" Width="4*" MinWidth="88"/>
-                        <DataGridTextColumn Header="Port" IsReadOnly="True" Binding="{Binding Path=Port}" Width="4*" MinWidth="52"/>
-                        <DataGridTextColumn Header="Query Port" IsReadOnly="True" Binding="{Binding Path=QueryPort}" Width="4*" MinWidth="93"/>
-                        <DataGridTextColumn Header="Map" IsReadOnly="True" Binding="{Binding Path=Defaultmap}" Width="7*" MinWidth="50"/>
-                        <DataGridTextColumn Header="Players" IsReadOnly="True" Binding="{Binding Path=Maxplayers}" Width="3*" MinWidth="70"/>
-                        <DataGridTextColumn Header="Uptime" IsReadOnly="True" Binding="{Binding Path=Uptime}" Width="4*" MinWidth="80"/>
-                        <!--<DataGridTextColumn Header="RAM Usage" IsReadOnly="True" Binding="{Binding Path=RamUsage}" Width="4*"/>-->
+                        <DataGridTextColumn Header="状态" IsReadOnly="True" Binding="{Binding Path=Status}" Width="70" MinWidth="70" MaxWidth="80"/>
+                        <DataGridTextColumn Header="服务器名称" IsReadOnly="True" Binding="{Binding Path=Name}" Width="9*" MinWidth="90"/>
+                        <DataGridTextColumn Header="IP地址" IsReadOnly="True" Binding="{Binding Path=IP}" Width="5*" MinWidth="100"/>
+                        <DataGridTextColumn Header="运行端口" IsReadOnly="True" Binding="{Binding Path=Port}" Width="4*" MinWidth="55"/>
+                        <DataGridTextColumn Header="查询端口" IsReadOnly="True" Binding="{Binding Path=QueryPort}" Width="4*" MinWidth="55"/>
+                        <DataGridTextColumn Header="地图" IsReadOnly="True" Binding="{Binding Path=Defaultmap}" Width="6*" MinWidth="50"/>
+                        <DataGridTextColumn Header="玩家" IsReadOnly="True" Binding="{Binding Path=Maxplayers}" Width="3*" MinWidth="45"/>
+						<DataGridTextColumn Header="运行时间" IsReadOnly="True" Binding="{Binding Path=Uptime}" Width="4*" MinWidth="80"/>
+						<!--<DataGridTextColumn Header="内存占用" IsReadOnly="True" Binding="{Binding Path=RamUsage}" Width="4*"/>-->
                     </DataGrid.Columns>
                 </DataGrid>
                 <GridSplitter Grid.Row="1" Height="5" HorizontalAlignment="Stretch">
@@ -730,46 +730,46 @@
                     <Grid>
                         <Button x:Name="button_Status" Content="" HorizontalAlignment="Left" Margin="399,10,0,0" Width="50" Height="11" Background="Orange" Foreground="White" VerticalAlignment="Top" IsHitTestVisible="False" />
 
-                        <Label x:Name="label_ProcessPriority" Content="Process Priority" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Height="26"/>
+                        <Label x:Name="label_ProcessPriority" Content="进程优先级" HorizontalAlignment="Left" Margin="5,10,0,0" VerticalAlignment="Top" Height="26"/>
                         <Slider x:Name="slider_ProcessPriority" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="101,10,0,0" Width="86" Height="25" Style="{StaticResource MahApps.Styles.Slider}" Minimum="0" Maximum="5" IsSnapToTickEnabled="True" TickPlacement="BottomRight" ValueChanged="Slider_ProcessPriority_ValueChanged"/>
                         <TextBox x:Name="textBox_ProcessPriority" Height="11" Margin="192,10,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" IsReadOnly="true" HorizontalAlignment="Left" Width="95" FontFamily="Consolas"/>
 
-                        <Button x:Name="button_SetAffinity" Content="Set Affinity" HorizontalAlignment="Left" Margin="292,10,0,0" VerticalAlignment="Top" Width="85" Height="26" Click="Button_SetAffinity_Click"/>
+                        <Button x:Name="button_SetAffinity" Content="分配核心" HorizontalAlignment="Left" Margin="292,10,0,0" VerticalAlignment="Top" Width="85" Height="26" Click="Button_SetAffinity_Click"/>
                         <TextBox x:Name="textBox_SetAffinity" Height="11" Margin="389,10,0,0" TextWrapping="NoWrap" Text="" VerticalAlignment="Top" IsReadOnly="true" HorizontalAlignment="Left" Width="66" FontFamily="Consolas"/>
-                        <Button x:Name="button_EditConfig" Content="Edit Config" HorizontalAlignment="Left" Margin="382,10,0,0" VerticalAlignment="Top" Width="85" Height="26" Click="Button_EditConfig_Click"/>
+                        <Button x:Name="button_EditConfig" Content="编辑配置" HorizontalAlignment="Left" Margin="382,10,0,0" VerticalAlignment="Top" Width="85" Height="26" Click="Button_EditConfig_Click"/>
 
-                        <Label x:Name="label_restartcrontab" Content="Restart Crontab" HorizontalAlignment="Left" Margin="5,40,0,0" VerticalAlignment="Top" Height="26"/>
+                        <Label x:Name="label_restartcrontab" Content="定时重启" HorizontalAlignment="Left" Margin="5,40,0,0" VerticalAlignment="Top" Height="26"/>
                         <mah:ToggleSwitch x:Name="switch_restartcrontab" Margin="99,38,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Toggled="Button_RestartCrontab_Click" Width="44" Height="30"/>
-                        <Button x:Name="button_restartcrontabedit" Cursor="Hand" Content="Edit" HorizontalAlignment="Left" Margin="150,40,0,0" VerticalAlignment="Top" Width="37" Height="26" Click="Button_CrontabEdit_Click"/>
+                        <Button x:Name="button_restartcrontabedit" Cursor="Hand" Content="编辑" HorizontalAlignment="Left" Margin="150,40,0,0" VerticalAlignment="Top" Width="37" Height="26" Click="Button_CrontabEdit_Click"/>
                         <TextBox x:Name="textBox_restartcrontab" Height="23" Margin="192,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="true" HorizontalAlignment="Left" Width="95"/>
                         <TextBox x:Name="textBox_nextcrontab" Height="11" Margin="292,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="true" HorizontalAlignment="Left" Width="175" FontFamily="Consolas"/>
 
-                        <Label Content="Auto Start" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Margin="5,127,0,0"/>
+                        <Label Content="自动启动" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Margin="5,127,0,0"/>
                         <mah:ToggleSwitch x:Name="switch_autostart" Margin="100,125,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Toggled="Button_AutoStart_Click" Width="44" Height="30"/>
 
-                        <Label x:Name="label_embedconsole" Content="Embed Console" HorizontalAlignment="Left" Margin="5,99,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="label_embedconsole" Content="嵌入控制台" HorizontalAlignment="Left" Margin="5,99,0,0" VerticalAlignment="Top"/>
                         <mah:ToggleSwitch x:Name="switch_embedconsole" Margin="100,97,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Toggled="Button_EmbedConsole_Click" Width="44" Height="30"/>
 
-                        <Label Content="Auto Restart" HorizontalAlignment="Left" Margin="177,127,0,0" VerticalAlignment="Top"/>
+                        <Label Content="自动重启" HorizontalAlignment="Left" Margin="177,127,0,0" VerticalAlignment="Top"/>
                         <mah:ToggleSwitch x:Name="switch_autorestart" Margin="258,125,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Toggled="Button_AutoRestart_Click" Width="44" Height="30"/>
 
-                        <Label Content="Auto Update" HorizontalAlignment="Left" Margin="338,127,0,0" VerticalAlignment="Top"/>
+                        <Label Content="自动更新" HorizontalAlignment="Left" Margin="338,127,0,0" VerticalAlignment="Top"/>
                         <mah:ToggleSwitch x:Name="switch_autoupdate" Margin="422,125,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Toggled="Button_AutoUpdate_Click" Width="44" Height="30"/>
 
-                        <Label Content="Update on Start" HorizontalAlignment="Left" Margin="159,99,0,0" VerticalAlignment="Top"/>
+                        <Label Content="启动时更新" HorizontalAlignment="Left" Margin="177,99,0,0" VerticalAlignment="Top"/>
                         <mah:ToggleSwitch x:Name="switch_updateonstart" Margin="258,97,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Toggled="Button_UpdateOnStart_Click" Width="44" Height="30"/>
 
-                        <Label Content="Backup on Start" HorizontalAlignment="Left" Margin="323,99,0,0" VerticalAlignment="Top"/>
+                        <Label Content="启动时备份" HorizontalAlignment="Left" Margin="338,99,0,0" VerticalAlignment="Top"/>
                         <mah:ToggleSwitch x:Name="switch_backuponstart" Margin="422,97,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Toggled="Button_BackupOnStart_Click" Width="44" Height="30"/>
 
-                        <Label x:Name="label_discordalert" Content="Discord Alert" HorizontalAlignment="Left" Margin="5,70,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="label_discordalert" Content="Discord警报" HorizontalAlignment="Left" Margin="5,70,0,0" VerticalAlignment="Top"/>
                         <mah:ToggleSwitch x:Name="switch_discordalert" Margin="99,68,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Toggled="Button_DiscordAlert_Click" Width="44" Height="30"/>
-                        <Button x:Name="button_discordedit" Cursor="Hand" Content="Edit" HorizontalAlignment="Left" Margin="150,70,0,0" VerticalAlignment="Top" Width="37" Height="26" Click="Button_DiscordEdit_Click"/>
-                        <Button x:Name="button_discordset" Cursor="Hand" Content="Set Message" HorizontalAlignment="Left" Margin="192,70,0,0" VerticalAlignment="Top" Width="95" Height="26" Click="Button_DiscordSetMessage_Click"/>
-                        <Button x:Name="button_discordtest" Cursor="Hand" Content="Test Alert" HorizontalAlignment="Left" Margin="382,70,0,0" VerticalAlignment="Top" Width="85" Height="26" Click="Button_DiscordWebhookTest_Click" IsEnabled="False"/>
-                        <Button x:Name="button_discordsettings" Content="Settings" HorizontalAlignment="Left" Margin="292,70,0,0" VerticalAlignment="Top" Width="85" Height="26" Click="Button_DiscordAlertSettings_Click"/>
-                        <Label x:Name="label_wgsmlog" Content="Log:" HorizontalAlignment="Left" Margin="24,154,0,0" VerticalAlignment="Top"/>
-                        <Button x:Name="button_clearwgsmlog" Cursor="Hand" Content="CLEAR" Margin="10,0,0,10" Height="18" Click="Button_ClearWGSMLog_Click" HorizontalAlignment="Left" Width="45" VerticalAlignment="Bottom"/>
+                        <Button x:Name="button_discordedit" Cursor="Hand" Content="编辑" HorizontalAlignment="Left" Margin="150,70,0,0" VerticalAlignment="Top" Width="37" Height="26" Click="Button_DiscordEdit_Click"/>
+                        <Button x:Name="button_discordset" Cursor="Hand" Content="设置信息" HorizontalAlignment="Left" Margin="192,70,0,0" VerticalAlignment="Top" Width="95" Height="26" Click="Button_DiscordSetMessage_Click"/>
+                        <Button x:Name="button_discordtest" Cursor="Hand" Content="测试警报" HorizontalAlignment="Left" Margin="382,70,0,0" VerticalAlignment="Top" Width="85" Height="26" Click="Button_DiscordWebhookTest_Click" IsEnabled="False"/>
+                        <Button x:Name="button_discordsettings" Content="设置" HorizontalAlignment="Left" Margin="292,70,0,0" VerticalAlignment="Top" Width="85" Height="26" Click="Button_DiscordAlertSettings_Click"/>
+                        <Label x:Name="label_wgsmlog" Content="日志:" HorizontalAlignment="Left" Margin="24,154,0,0" VerticalAlignment="Top"/>
+                        <Button x:Name="button_clearwgsmlog" Cursor="Hand" Content="清空" Margin="10,0,0,10" Height="18" Click="Button_ClearWGSMLog_Click" HorizontalAlignment="Left" Width="45" VerticalAlignment="Bottom"/>
                         <TextBox x:Name="textBox_wgsmlog" Margin="10,157,10,10" FontFamily="Consolas" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" IsReadOnly="True"/>
                     </Grid>
 
@@ -781,11 +781,11 @@
 
                     <Grid Grid.Column="2" MinWidth="100">
                         <Rectangle Height="30" VerticalAlignment="Top" Fill="Black"/>
-                        <Button x:Name="Button_AutoScroll" Style="{DynamicResource MahApps.Styles.Button.Square}" Cursor="Hand" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" Content="✔ Auto Scroll" mah:ControlsHelper.CornerRadius="0" Background="Black" Foreground="White" Height="30" mah:ControlsHelper.ContentCharacterCasing="Upper" BorderThickness="0" Click="Button_AutoScroll_Click" />
-                        <Button x:Name="button_clearServerConsole" Style="{DynamicResource MahApps.Styles.Button.Square}" Cursor="Hand" Content="CLEAR" Height="30" Click="Button_ClearServerConsole_Click" HorizontalAlignment="Right" Width="61" mah:ControlsHelper.CornerRadius="0" VerticalAlignment="Top" Background="Black" Foreground="White" mah:ControlsHelper.ContentCharacterCasing="Upper" BorderThickness="0" />
+                        <Button x:Name="Button_AutoScroll" Style="{DynamicResource MahApps.Styles.Button.Square}" Cursor="Hand" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120" Content="✔ 自动滚屏" mah:ControlsHelper.CornerRadius="0" Background="Black" Foreground="White" Height="30" mah:ControlsHelper.ContentCharacterCasing="Upper" BorderThickness="0" Click="Button_AutoScroll_Click" />
+                        <Button x:Name="button_clearServerConsole" Style="{DynamicResource MahApps.Styles.Button.Square}" Cursor="Hand" Content="清空" Height="30" Click="Button_ClearServerConsole_Click" HorizontalAlignment="Right" Width="61" mah:ControlsHelper.CornerRadius="0" VerticalAlignment="Top" Background="Black" Foreground="White" mah:ControlsHelper.ContentCharacterCasing="Upper" BorderThickness="0" />
                         <TextBox x:Name="console" FontFamily="Consolas" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility ="Disabled" Background="Black" IsReadOnly="True" Margin="0,30,0,26" BorderBrush="Black" Foreground="White" BorderThickness="0" SelectionBrush="White" TextWrapping="Wrap"/>
                         <TextBox x:Name="textbox_servercommand" TextWrapping="Wrap" Text="" Margin="0,0,61,0" Height="23" VerticalAlignment="Bottom" KeyDown="Textbox_ServerCommand_KeyDown" IsEnabled="False" Background="Black" BorderBrush="White" Foreground="White" CaretBrush="White" PreviewKeyDown="Textbox_ServerCommand_PreviewKeyDown"/>
-                        <Button x:Name="button_servercommand" Cursor="Hand" Content="Send" Click="Button_ServerCommand_Click" IsEnabled="False" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="61" mah:ControlsHelper.CornerRadius="0" />
+                        <Button x:Name="button_servercommand" Cursor="Hand" Content="发送" Click="Button_ServerCommand_Click" IsEnabled="False" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="61" mah:ControlsHelper.CornerRadius="0" />
                     </Grid>
                 </Grid>
             </Grid>
@@ -831,17 +831,17 @@
                 <!--  Items  -->
                 <mah:HamburgerMenu.ItemsSource>
                     <mah:HamburgerMenuItemCollection>
-                        <mah:HamburgerMenuImageItem Label="Home">
+                        <mah:HamburgerMenuImageItem Label="主页">
                             <mah:HamburgerMenuImageItem.Thumbnail>
                                 <BitmapImage UriSource="pack://application:,,,/WindowsGSM;component/Images/HMenu/Home.ico" />
                             </mah:HamburgerMenuImageItem.Thumbnail>
                         </mah:HamburgerMenuImageItem>
-                        <mah:HamburgerMenuImageItem Label="Dashboard">
+                        <mah:HamburgerMenuImageItem Label="仪表盘">
                             <mah:HamburgerMenuImageItem.Thumbnail>
                                 <BitmapImage UriSource="pack://application:,,,/WindowsGSM;component/Images/HMenu/Dashboard.ico" />
                             </mah:HamburgerMenuImageItem.Thumbnail>
                         </mah:HamburgerMenuImageItem>
-                        <mah:HamburgerMenuImageItem Label="Discord Bot">
+                        <mah:HamburgerMenuImageItem Label="Discord机器人">
                             <mah:HamburgerMenuImageItem.Thumbnail>
                                 <BitmapImage UriSource="pack://application:,,,/WindowsGSM;component/Images/HMenu/Discord.ico" />
                             </mah:HamburgerMenuImageItem.Thumbnail>
@@ -851,12 +851,12 @@
 
                 <mah:HamburgerMenu.OptionsItemsSource>
                     <mah:HamburgerMenuItemCollection>
-                        <mah:HamburgerMenuImageItem Label="Plugins">
+                        <mah:HamburgerMenuImageItem Label="插件">
                             <mah:HamburgerMenuImageItem.Thumbnail>
                                 <BitmapImage UriSource="pack://application:,,,/WindowsGSM;component/Images/HMenu/ViewPlugins.ico" />
                             </mah:HamburgerMenuImageItem.Thumbnail>
                         </mah:HamburgerMenuImageItem>
-                        <mah:HamburgerMenuImageItem Label="Settings">
+                        <mah:HamburgerMenuImageItem Label="设置">
                             <mah:HamburgerMenuImageItem.Thumbnail>
                                 <BitmapImage UriSource="pack://application:,,,/WindowsGSM;component/Images/HMenu/Settings.ico" />
                             </mah:HamburgerMenuImageItem.Thumbnail>
