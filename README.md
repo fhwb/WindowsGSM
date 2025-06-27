@@ -1,4 +1,4 @@
-开源工具，叛逆猛禽汉化版，收费的都是骗子！
+开源工具，叛逆猛禽汉化版，免费的、免费的、免费的，收费的都是骗子！
 ![Screenshot](./1.png)
 
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/WindowsGSM/WindowsGSM/)
