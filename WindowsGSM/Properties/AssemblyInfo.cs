@@ -7,13 +7,13 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("WindowsGSM")]
+[assembly: AssemblyTitle("游戏服务器管理")]
 [assembly: AssemblyDescription("A Game Server Manager works on Windows Platform")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("TatLead")]
 [assembly: AssemblyProduct("WindowsGSM")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("程序由叛逆猛禽汉化编译")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
@@ -51,7 +51,7 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.23.1.0")]
-[assembly: AssemblyFileVersion("1.23.1.0")]
-[assembly: NeutralResourcesLanguage("en")]
+[assembly: AssemblyVersion("1.23.1.10")]
+[assembly: AssemblyFileVersion("1.23.1.10")]
+[assembly: NeutralResourcesLanguage("zh-CN")]
 
