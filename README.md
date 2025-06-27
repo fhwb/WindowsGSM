@@ -1,4 +1,5 @@
-﻿![Screenshot](./1.png)
+开源工具，叛逆猛禽汉化版，收费的都是骗子！
+![Screenshot](./1.png)
 
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/WindowsGSM/WindowsGSM/)
 [![Build status](https://ci.appveyor.com/api/projects/status/ttaomnayo3gidf2g?svg=true)](https://ci.appveyor.com/project/WindowsGSM/windowsgsm)
